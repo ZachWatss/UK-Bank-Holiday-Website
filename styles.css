@@ -1,0 +1,127 @@
+/* Reset */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box; /*this inclues margins and padding in H and W*/
+
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    min-height: 100vh; /*100 percent of browsers window height*/
+    padding: 40px 24px; /* 40 T and B 24 L and R*/
+}
+
+h1{
+    text-align: center;
+    font-size: 2.5rem; /* rel to root fs*/
+    margin-bottom: 40px; /*seperate from calender*/
+    color: #f8fafc;
+    letter-spacing: -1px;
+}
+
+#dropDownBox,
+#datesDDB{
+    max-width: 500px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column; /*vert stack */
+    gap: 10px;
+
+}
+
+label{
+    color: #c8d4e2;
+    font-size: 0.95rem;
+    font-weight: 600;/*make more bold*/
+}
+
+select{
+    width: 100%; /*fill with of parent container*/
+    padding: 14px 16px;
+    border: 1px solid #334155;
+    border-radius: 10px; /*rounds corners*/
+    background: #1e293b;
+    color: #f8fafc;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgb(129 140 248 / 20%); /* adds a glow to the border on focus */
+}
+
+#calendar{
+    max-width: 900px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));/* Automatically fit as many cards per row as possible, keeping each at least 240px wide and sharing leftover space evenly */
+    gap: 14px;
+}
+
+/* generative div for each hoilday */
+#calendar div{
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 18px;
+    color: #e2e8f0;
+    line-height: 1.5; /*space between lines */
+    transition: transform 0.2s, border-color 0.2s;;
+}
+
+#calendar div:hover {
+    transform: translateY(-3px); /* moves holiday vertical */
+    border-color: #818cf8;
+}
+
+#upIncomingBankHol,
+#pastBankHol {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 24px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #a5b4fc;
+}
+
+#upIncomingResult,
+#pastResult {
+    color: #e2e8f0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    body {
+        padding: 28px 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    #calendar {
+        grid-template-columns: 1fr;
+        margin-top: 25px;
+    }
+
+    #upIncomingBankHol,
+    #pastBankHol {
+        padding: 20px;
+    }
+}
