@@ -1,0 +1,12 @@
+VS Code settings
+
+.vscode/
+
+Windows system files
+
+Thumbs.db
+Desktop.ini
+
+Environment variables and secrets
+
+.env

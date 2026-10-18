@@ -19,7 +19,7 @@ fetch("https://www.gov.uk/bank-holidays.json")
         // Get the dropdown where the user chooses past or future dates
         const dates = document.getElementById("dates");
 
-        const upIncomingResult = document.getElementById("upIncomingResult")
+        const upcomingResult = document.getElementById("upcomingResult")
         const pastResult = document.getElementById("pastResult")
 
 
@@ -28,7 +28,7 @@ fetch("https://www.gov.uk/bank-holidays.json")
 
             // Clear the calendar before displaying the new country's holidays
             calendar.innerHTML = "";
-            upIncomingResult.textContent = "";
+            upcomingResult.textContent = "";
             pastResult.textContent = "";
             let nextHoliday = null;
             let lastHoliday = null
@@ -108,7 +108,7 @@ fetch("https://www.gov.uk/bank-holidays.json")
             
             });//for each
             
-            upIncomingResult.textContent = nextHoliday.title + " - " + nextHoliday.date;
+            upcomingResult.textContent = nextHoliday.title + " - " + nextHoliday.date;
             pastResult.textContent = lastHoliday.title + " - " + lastHoliday.date;
         };//show hoildays funtion
 
